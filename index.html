@@ -1,73 +1,82 @@
+<!-- loading出自https://gitee.com/wyanhui02/html_css_demo/commit/3d2691de3db9136aeabaec7c845a2db9e2fc9e2d -->
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<title>Login</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="refresh" content="5,html/home.html"/>
+		<title>My card</title>
 		<style type="text/css">
+			*{
+			    /* 初始化 */
+			    margin: 0;
+			    padding: 0;
+			}
 			body{
-				margin: 0;
-				padding: 0;
-				font-family: 'Open Sans',sans-serif;
-				background : blue ;
+			    /* 100%窗口高度 */
+			    height: 100vh;
+			    /* 弹性布局 水平+垂直居中 */
+			    display: flex;
+			    justify-content: center;
+			    align-items: center;
+				background: linear-gradient(60deg,#64DB8F,#64DB8F,#64DB8F,#7da3db);
 			}
-			div{
-				width: 300px;
-				height: 300px;
-				margin: 0 auto;
-				margin-top: 200px;
-				letter-spacing: 1px;
+			.loader{
+			    /* 相对定位 */
+			    position: relative;
+			    width: 250px;
+			    height: 250px;
+			    /* 默认旋转45度 */
+			    transform: rotate(45deg);
+			    /* 执行动画：动画名 时长 线性的 无限次播放 */
+			    animation: roll 2.5s linear infinite;
 			}
-			h1{
-				color: #52f8f8;
-				text-shadow:0 0 30px;
-				text-align: center;
-				font-size: 2em;
+			.loader span{
+			    position: absolute;
+			    width: 100%;
+			    height: 100%;
+			    /* 通过var函数获取自定义属性--i，计算每一个span元素的旋转角度 */
+			    transform: rotate(calc(90deg * var(--i)));
 			}
-			input{
-				width: 280px;
-				height: 28px;
-				margin-bottom: 6px;
-				font-size: 15px;
-				outline: none;
-				border-top: 1px solid #312E3D;
-				border-left: 1px solid #312E3D;    
-				border-right: 1px solid #312E3D;    
-				border-bottom: 1px solid #56536A;    
-				border-radius: 4px;
-				background-color: rgba(71, 0, 112, 0.6);
+			.loader span::before{
+			    content: "";
+			    width: 70px;
+			    height: 70px;
+			    /* 调用自定义属性--c，设置背景色 */
+			    background-color: var(--c);
+			    border-radius: 50%;
+			    position: absolute;
+			    /* 默认都居中 */
+			    left: 50%;
+			    top: 50%;
+			    transform: translate(-50%,-50%);
+			    /* 执行动画：动画名 时长 贝塞尔曲线 无限次播放 */
+			    animation: move 2.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
 			}
-			input:hover{
-				font-size: 110%;
+			
+			/* 定义动画 */
+			@keyframes move {
+			    50%{
+			        left: 0;
+			        box-shadow: 0 0 5px var(--c),
+			        0 0 10px var(--c),
+			        0 0 20px var(--c);
+			    }
 			}
-			a{
-				width: 285px;
-				min-height: 28px;
-				margin: 0;
-				display: block;
-				border-radius: 5px;
-				font-size: 15px;
-				background-color: rgba(189, 189, 189, 0.9);
-			}
-			a{
-				display: block;
-				text-align: center;
-				text-decoration: none;
-			}
-			a:hover{
-				font-size: 110%;
+			@keyframes roll {
+			    to{
+			        transform: rotate(360deg);
+			    }
 			}
 		</style>
 	</head>
 	<body>
-		<div>
-			<h1>Login</h1>
-			<form  method="post">
-				<input type="text" name="login" placeholder="用户名"maxlength="24"required="required"/>
-				<input type="password" name="password" placeholder="密码" maxlength="24"required="required"/>
-				<!-- <button type="submit">后台搞不懂，拿超链接凑</button> -->
-				<a href="HTML/home.html">登录</a>
-				<a href="HTML/register.html"style="width:60px;height: 25px;float: right;background-color: rgba(255, 255, 255, 0.1)">注册</a>
-			</form>
-		</div>
+		<div class="loader">
+		        <!-- --i、--c为自定义属性，CSS中可通过var函数对其调用 -->
+		        <span style="--i:1;--c:#2ecc71;"></span>
+		        <span style="--i:2;--c:#3498db;"></span>
+		        <span style="--i:3;--c:#f1c40f;"></span>
+		        <span style="--i:4;--c:#e74c3c;"></span>
+		    </div>
 	</body>
 </html>
