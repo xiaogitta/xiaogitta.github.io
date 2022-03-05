@@ -1,0 +1,25 @@
+#footer{
+	height: 15rem;
+    border-top: .1rem solid #e4e4e4;
+    border-bottom: .1rem solid #e4e4e4;
+    padding-bottom: 1rem;
+}
+#footer .footbox{
+	width: 50%;
+	height: 15rem;
+	margin: auto;
+	overflow: auto;
+}
+.footbox .foot-1{
+	width: 65%;
+	float: left;
+	text-align: center;
+	
+}
+.footbox .foot-2{
+	width: 30%;
+	float: left;
+}
+.footbox .foot-2 img{
+	height: 13rem;
+}
