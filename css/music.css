@@ -1,0 +1,30 @@
+.music{
+	width: 30%;
+	height: 85%;
+	margin-left: 60%;
+	background:linear-gradient(33deg,#f454ff,#7da3db,#6cff9d);
+	padding: 1rem;
+	border-radius: 10rem 2rem 2rem 10rem;
+}
+#muiscu{
+	width: 30%;
+	height: 100%;
+	background-image: url(../img/fwe343.jpeg);
+	background-size: cover;
+	border-radius: 50%;
+	float: left;
+}
+#play{
+	width: 60%;
+	height: 80%;
+	padding: 1.2rem;
+	float: right;
+}
+#play h2{
+	font-size: 150%;
+	text-shadow: 1px 1px yellow;
+}
+@keyframes rot{
+	from{transform: rotate(0);}
+	to{transform: rotate(7200deg)}
+}
