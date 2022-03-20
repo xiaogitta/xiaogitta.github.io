@@ -19,3 +19,9 @@ pp[4].innerHTML="大概因为再多的喜欢，也换不来未来。";
 pp[5].innerHTML="在青山绿水之间，我想牵着你的手，走过这座桥，桥上是绿叶红花，桥下是流水人家，桥的那头是青丝，桥的这头是白发。"
 pp[6].innerHTML="我的不开心，我的难受，我都尽量留给了自己，不吵不闹不炫耀，不要委屈不要嘲笑，也不需要别人知道。有太多话想说，但是往往到最后还是通通收了回来。所谓成长也许就是将哭声调成静音的过程，把情绪收到别人看不到的地方，一个人学会坚强。";
 pp[7].innerHTML="Everything is a price, the price of happiness is pain.";
+
+
+
+
+console.log('%c Muieay的个人博客', 'text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .2), 0 20px 20px rgba(0, 0, 0, .15);\
+font-size: 5em;');
